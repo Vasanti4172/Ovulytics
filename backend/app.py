@@ -5,7 +5,7 @@ import numpy as np
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # --- MODEL LOADING ---
 # Ensure these files are the new Random Forest versions
