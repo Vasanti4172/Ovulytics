@@ -48,7 +48,8 @@ function App() {
     };
 
     try {
-      const res = await axios.post("http://127.0.0.1:5000/predict", payload);
+      // Change this to YOUR Render link
+      const res = await axios.post("https://ovulytics-backend.onrender.com/predict", payload);
       setResult(res.data);
     } catch (err) {
       console.error("Error:", err.response?.data || err.message);
