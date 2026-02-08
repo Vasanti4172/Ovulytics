@@ -49,7 +49,7 @@ function App() {
 
     try {
       // Change this to YOUR Render link
-      const res = await axios.post("https://ovulytics-backend.onrender.com/predict", payload);
+      const res = await axios.post("https://ovulytics-1.onrender.com/predict", payload);
       setResult(res.data);
     } catch (err) {
       console.error("Error:", err.response?.data || err.message);
