@@ -76,7 +76,7 @@ def predict():
 
     except Exception as e:
         print(f"⚠️ Prediction Error: {str(e)}")
-        return jsonify({"error": "Failed to process data. Check input values."}), 400
+        return jsonify({"error": str(e)}), 400
 
 @app.route('/health', methods=['GET'])
 def health_check():
