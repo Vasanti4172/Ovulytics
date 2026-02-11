@@ -32,20 +32,20 @@ function App() {
 
     // Convert all inputs to appropriate numeric types
     const payload = {
-      Age: parseFloat(formData.Age),
-      BMI: parseFloat(formData.BMI),
-      LengthofCycle: parseFloat(formData.LengthofCycle),
-      MeanCycleLength: parseFloat(formData.MeanCycleLength),
-      LengthofLutealPhase: parseFloat(formData.LengthofLutealPhase),
-      EstimatedDayofOvulation: parseFloat(formData.EstimatedDayofOvulation),
-      FirstDayofHigh: parseFloat(formData.FirstDayofHigh),
-      TotalDaysofFertility: parseFloat(formData.TotalDaysofFertility),
-      TotalNumberofHighDays: parseFloat(formData.TotalNumberofHighDays),
-      TotalNumberofPeakDays: parseFloat(formData.TotalNumberofPeakDays),
-      CycleWithPeakorNot: parseInt(formData.CycleWithPeakorNot),
-      CycleRegularityIndex: parseFloat(formData.CycleRegularityIndex),
-      FertilitySpread: parseFloat(formData.FertilitySpread)
-    };
+  Age: parseFloat(formData.Age) || 0,
+  BMI: parseFloat(formData.BMI) || 0,
+  LengthofCycle: parseFloat(formData.LengthofCycle) || 0,
+  MeanCycleLength: parseFloat(formData.MeanCycleLength) || 0,
+  LengthofLutealPhase: parseFloat(formData.LengthofLutealPhase) || 0,
+  EstimatedDayofOvulation: parseFloat(formData.EstimatedDayofOvulation) || 0,
+  FirstDayofHigh: parseFloat(formData.FirstDayofHigh) || 0,
+  TotalDaysofFertility: parseFloat(formData.TotalDaysofFertility) || 0,
+  TotalNumberofHighDays: parseFloat(formData.TotalNumberofHighDays) || 0,
+  TotalNumberofPeakDays: parseFloat(formData.TotalNumberofPeakDays) || 0,
+  CycleWithPeakorNot: parseInt(formData.CycleWithPeakorNot) || 0,
+  CycleRegularityIndex: parseFloat(formData.CycleRegularityIndex) || 0,
+  FertilitySpread: parseFloat(formData.FertilitySpread) || 0
+};
 
     try {
       // Change this to YOUR Render link
@@ -99,13 +99,13 @@ function App() {
       </div>
 
       {result && (
-        <div className="result-box">
-          <h3>Analysis Result</h3>
-          <p><strong>Pattern:</strong> {result.OvulationPattern}</p>
-          <p><strong>Status:</strong> {result.CycleHealth}</p>
-          <p><strong>Confidence:</strong> {result.Confidence}</p>
-        </div>
-      )}
+  <div className={`result-box ${result.CycleHealth === "Regular" ? "stable" : "irregular"}`}>
+    <h3>Analysis Result</h3>
+    <p><strong>Ovulation Pattern:</strong> {result.OvulationPattern}</p>
+    <p><strong>Health Status:</strong> {result.CycleHealth}</p>
+    <p><strong>Model Confidence:</strong> {result.Confidence}</p>
+  </div>
+)}
     </div>
   );
 }
