@@ -26,7 +26,7 @@ form {
 
 .form-section h3 {
   font-size: 16px;
-  color: #3b82f6;
+  color: #f3b1e7;
   margin-bottom: 15px;
   border-bottom: 2px solid #eff6ff;
 }
@@ -48,7 +48,7 @@ input {
 
 button {
   grid-column: 1 / -1; /* Stretch button across all columns */
-  background: #3b82f6;
+  background: #f3b1e7;
   color: white;
   padding: 15px;
   border: none;
@@ -58,7 +58,7 @@ button {
   transition: background 0.3s;
 }
 
-button:hover { background: #2563eb; }
+button:hover { background: #f3b1e7; }
 
 .result-box {
   grid-column: 1 / -1;
