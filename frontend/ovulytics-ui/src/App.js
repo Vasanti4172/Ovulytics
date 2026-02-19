@@ -62,7 +62,7 @@ function App() {
   return (
     <div className="container">
       <h1>Ovulytics Pro</h1>
-      <p className="subtitle">Clinical Cycle Analysis (13-Feature Mode)</p>
+      <p className="subtitle">Clinical Cycle Analysis</p>
       
       <div className="form-box">
         <form onSubmit={handleSubmit}>
@@ -98,12 +98,17 @@ function App() {
         </form>
       </div>
 
-      {result && (
-  <div className={`result-box ${result.CycleHealth === "Regular" ? "stable" : "irregular"}`}>
+ {result && (
+  <div className={result.CycleHealth === "Regular" ? "result-regular" : "result-irregular"}>
     <h3>Analysis Result</h3>
-    <p><strong>Ovulation Pattern:</strong> {result.OvulationPattern}</p>
-    <p><strong>Health Status:</strong> {result.CycleHealth}</p>
-    <p><strong>Model Confidence:</strong> {result.Confidence}</p>
+    <div className="result-content">
+      <p><strong>Ovulation Pattern:</strong> {result.OvulationPattern}</p>
+      <p><strong>Health Status:</strong> {result.CycleHealth}</p>
+      <p><strong>Model Confidence:</strong> {result.Confidence}</p>
+    </div>
+    <button onClick={() => setResult(null)} style={{marginTop: '15px', padding: '10px', background: 'rgba(255,255,255,0.5)', color: '#4a4a4a'}}>
+      Clear Result
+    </button>
   </div>
 )}
     </div>
