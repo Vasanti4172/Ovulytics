@@ -134,9 +134,9 @@ def predict():
         # -----------------------------
         doctor_note = ""
         if risk_level == "High":
-            doctor_note = "⚠️ Multiple irregular patterns detected. Consider consulting a gynecologist."
+            doctor_note = " 🚨 Multiple irregular patterns detected. Consider consulting a gynecologist."
         elif risk_level == "Moderate":
-            doctor_note = "⚠️ Some irregularities observed. Monitor cycles closely."
+            doctor_note = " ❗ Some irregularities observed. Monitor cycles closely."
 
         # -----------------------------
         # Next cycle prediction

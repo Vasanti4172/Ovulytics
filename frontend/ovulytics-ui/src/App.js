@@ -149,7 +149,7 @@ function App() {
 
     <ul className="insight-list">
       {result.Insights.map((item, index) => (
-        <li key={index}>• {item}</li>
+        <li key={index}> {item}</li>
       ))}
     </ul>
 
@@ -164,7 +164,7 @@ function App() {
 
     {result.DoctorAdvice && (
       <div className="doctor-warning">
-        ⚠️ {result.DoctorAdvice}
+         {result.DoctorAdvice} 🩺
       </div>
     )}
   </div>
@@ -173,7 +173,7 @@ function App() {
 
 
      
-
+    <h4>🤍 For awareness and pattern analysis only — not a medical diagnosis. 🤍</h4>
     <button onClick={() => setResult(null)} style={{marginTop: '15px', padding: '10px'}}>
       Clear Result
     </button>
